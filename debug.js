@@ -1,0 +1,6 @@
+const fs = require("fs")
+const path = require("path")
+const resolve = (p) => path.resolve(__dirname,".",p)
+const entryDir = resolve("src/page")
+const entryFiles = fs.readdirSync(entryDir)
+console.log(entryFiles)
