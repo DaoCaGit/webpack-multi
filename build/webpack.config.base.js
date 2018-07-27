@@ -21,7 +21,7 @@ const config = {
     }),
     new VueLoaderPlugin(),
     new CopyWebpackPlugin([{
-			from: resolve("template"),
+      from: resolve("template"),
       to: resolve("dist"),
       ignore:["*.html"]
     }]),
@@ -41,7 +41,7 @@ module.exports = function(env){
   config.output = output;
   config.resolve.alias = alias;
   config.module.rules.push(...loaders);
-  config.plugins.push(...htmlPlugins)
+  config.plugins.push(...htmlPlugins);
 
   return config;
 }

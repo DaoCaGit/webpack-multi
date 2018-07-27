@@ -8,10 +8,9 @@ const entryDir = resolve("src/page")
 const outputDir = resolve("dist")
 const templatePath = resolve("template/index.html")
 const entryFiles = fs.readdirSync(entryDir)
-const
-  entry = {},
-  output = {}
-  htmlPlugins = [];
+let entry = {}
+let output = {}
+let htmlPlugins = [];
 
 
 // Map alias
@@ -39,9 +38,9 @@ function resolveEntryAndOutput(env){
 function combineHTMLWithTemplate(){
   entryFiles.forEach(dir => {
     const htmlPlugin = new HTMLWebpackPlugin({
-      filename:`${dir}.html`,
-      template:resolve(`${entryDir}/${dir}/${dir}.html`),
-      chunks:[dir,"vendor"]
+      filename: `${dir}.html`,
+      template: resolve(`${entryDir}/${dir}/${dir}.html`),
+      chunks: [dir,"vendor"]
     })
     htmlPlugins.push(htmlPlugin)
   })
